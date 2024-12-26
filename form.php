@@ -66,7 +66,7 @@
     <div class="row mb-3">
     <label for="inputPassword3" class="col-sm-2 col-form-label">อายุ</label>
     <div class="col-sm-2">
-      <input type="text" class="form-control" id="inputPassword3" name="Age">
+      <input type="text" class="form-control" id="inputPassword3" name="age">
     </div>
     <label for="inputPassword3" class="col-sm-2 col-form-label">ปี</label>
   </div>
@@ -90,7 +90,7 @@
   <div class="row mb-3">
     <label for="inputPassword3" class="col-sm-2 col-form-label">ที่อยู่</label>
     <div class="col-sm-2">
-      <input type="text" class="form-control" id="inputPassword3" name="adddress">
+      <input type="text" class="form-control" id="inputPassword3" name="address">
     </div>
     <label for="inputPassword3" class="col-sm-2 col-form-label"></label>
   </div>
@@ -121,18 +121,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $pettype=$_POST['pettype'] ;
     $breed=$_POST['breed'];
     $gender=$_POST['gender'];
-    $age=$_POST['age'];
+    $age=$_POST['age'] ;
     $weight=$_POST['weight'];
     $birthday=$_POST['birthday'];
-    $adddress=$_POST['adddress'];
+    $address=$_POST['address'];
     $telephonenumber=$_POST['telephonenumber'];
     $information=$_POST['information'];
 
 // ทำการเพิ่มข้อมูล
 try {
 
-    $sql = "INSERT INTO homework6 (name, pettype, breed, gender, age , weight, birthday, adddress, telephonenumber, information)
-    VALUES ('$name', '$pettype','$breed','$gender', '$age','$weight','$birthday','$adddress','$telephonenumber','$information')";
+    $sql = "INSERT INTO homework6 (name,pettype,breed,gender,age,weight,birthday,address,telephonenumber,information)
+    VALUES ('$name', '$pettype', '$breed', '$gender', '$age', '$weight', '$birthday','$address','$telephonenumber','$information')";
     // use exec() because no results are returned
     $conn->exec($sql);
     echo "<div class='alert alert-success'><strong> ยินดีด้วยค่ะ คุณได้บันทึกข้อมูลเข้าไปใหม่ 1 รายการ! </strong></div>";
@@ -142,7 +142,7 @@ try {
   
   $conn = null;
 
-   
+
 }
 ?>
 </body>
